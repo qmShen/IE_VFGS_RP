@@ -1,0 +1,110 @@
+\documentclass[conference]{IEEEtran}
+\IEEEoverridecommandlockouts
+% The preceding line is only needed to identify funding in the first footnote. If that is unneeded, please comment it out.
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts, amsthm}
+\usepackage{algorithm, algorithmicx}
+\usepackage[]{algpseudocode}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+% Add by author
+\usepackage{cite}
+\usepackage{amsmath}
+% \usepackage{fontspec}
+
+
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+\begin{document}
+
+\title{CheetahTraj: Quality and Efficiency in Large-scale Trajectory Data Visual Exploration
+}
+
+\author{\IEEEauthorblockN{1\textsuperscript{st} Given Name Surname}
+\IEEEauthorblockA{\textit{dept. name of organization (of Aff.)} \\
+\textit{name of organization (of Aff.)}\\
+City, Country \\
+email address or ORCID}
+\and
+\IEEEauthorblockN{2\textsuperscript{nd} Given Name Surname}
+\IEEEauthorblockA{\textit{dept. name of organization (of Aff.)} \\
+\textit{name of organization (of Aff.)}\\
+City, Country \\
+email address or ORCID}
+
+}
+
+\maketitle
+
+% Defined by authors--------------------------------------------
+\newtheorem{problem}{Problem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{theorem}{Theorem}
+\newcommand{\Bo}[1]{{\color{red} Bo: #1}}
+% \newcommand{\QM}[1]{{\color{blue} QM: #1}}
+\newcommand{\QM}[1]{{\color{blue}{#1}}}
+
+\newcommand{\D}{\mathcal{T}}
+\newcommand{\V}{\mathsf{V}}
+\newcommand{\oR}{\mathcal{R}}
+\newcommand{\MU}{\mathsf{U}}
+\newcommand{\vats}{\mathsf{VFGS}}
+\newcommand{\rand}{\mathsf{RAND}}
+\newcommand{\full}{\mathsf{FULL}}
+\newcommand{\avats}{\mathsf{CheetahTraj}^{+}}
+\newcommand{\cavats}{\mathsf{CheetahTraj}^{+}\mathsf{CE}}
+\newcommand{\sz}{\textsf{Shenzhen}}
+\newcommand{\pt}{\textsf{Porto}}
+\newcommand{\trim}{\vspace{-2mm}}
+
+\newcommand{\stitle}[1]{\vspace*{0.4em}\noindent{\bf #1:\/}}
+\newcommand{\sstitle}[1]{\vspace*{0.4em}\noindent{\bf #1\/.}}
+
+
+\newcommand{\squishlist}{
+	\begin{list}{$\bullet$}
+		{ \setlength{\itemsep}{0pt}
+			\setlength{\parsep}{3pt}
+			\setlength{\topsep}{3pt}
+			\setlength{\partopsep}{0pt}
+			\setlength{\leftmargin}{1.2em}
+			\setlength{\labelwidth}{1em}
+			\setlength{\labelsep}{0.6em}
+		}
+	}
+	\newcommand{\squishend}{
+	\end{list}
+}
+
+% Defined by authors --------------------------------- Done
+
+\begin{abstract}
+Visualizing large-scale trajectory data is a core subroutine for many smart city applications, e.g., traffic management, urban planning, and route recommendation. The task is challenging due to high scalability requirement and severe visual clutter. Sampling can effectively mitigate both problems but may harm visual quality, i.e., generating visualizations that look different from the exact one. In this work, we propose sampling techniques that provide \textit{theoretically guaranteed visual quality} for large-scale trajectory data visualization. We first define a natural pixel-based \textit{quality loss function} to measure the difference between two visualizations. However, our analysis shows that it is NP-hard to sample a fixed-size subset of trajectories to minimize the loss function. Therefore, we then devise an approximate algorithm with a suite of optimization techniques, which runs efficiently but still provides guaranteed quality loss. By taking data distribution and human perception characteristics into consideration, we further improve it to an advanced algorithm to tackle the visual clutter problem. Extensive experiments (i.e., case-, user-, and quantitative- studies) are also conducted on real-world trajectory datasets to verify the effectiveness and efficiency of our proposals.	
+%Visualizing large-scale trajectory data is a core subroutine for many smart city applications, e.g., traffic management, urban planning, and route recommendation. The task is challenging due to high scalability requirement and severe visual clutter. Sampling can effectively mitigate both problems but may harm visual fidelity, i.e., generating visualizations that look different from the exact one. In this work, we propose sampling techniques that provide \textit{theoretically guaranteed visual fidelity} for large-scale trajectory data visualization. We first define a natural pixel-based \textit{fidelity loss function} to measure the difference between two visualizations. However, our analysis shows that it is NP-hard to sample a fixed-size subset of trajectories to minimize the loss function. Therefore, we then devise an approximate algorithm named \textit{$\vats$} with a suite of optimization techniques, which runs efficiently but still provides guaranteed fidelity loss. By taking data distribution and human perception characteristics into consideration, we further improve $\vats$ to an advanced algorithm named $\avats$ to tackle the visual clutter problem. Extensive experiments (i.e., case-, user-, and quantitative- studies) are also conducted on real-world trajectory datasets to verify the effectiveness and efficiency of our proposals.
+%In addition, comprehensive user studies further illustrate the superiority of our proposals in various applications, e.g., traffic flow comparison, and reachable route inspection.
+\end{abstract}
+
+\begin{IEEEkeywords}
+component, formatting, style, styling, insert
+\end{IEEEkeywords}
+
+% wari
+
+\input{sections/Introduction.tex}
+
+\input{sections/RelatedWork.tex}
+
+\input{sections/ProblemFormulation.tex}
+
+\input{sections/ProblemSolving.tex}
+
+\input{sections/Evaluation.tex}
+
+\input{sections/ConclusionFutureWork.tex}
+
+
+\bibliographystyle{IEEEtran}
+\bibliography{ref}
+
+\end{document}
