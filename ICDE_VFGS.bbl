@@ -243,6 +243,10 @@ A.~Mayorga and M.~Gleicher, ``Splatterplots: Overcoming overdraw in scatter
 ``Porto taxi trajectory dataset,''
   \url{http://www.geolink.pt/ecmlpkdd2015-challenge/dataset.html}, 2020.
 
+\bibitem{cd}
+``Chengdu didi trajectory dataset,''
+  \url{https://outreach.didichuxing.com/app-vue/dataList}, 2020.
+
 \bibitem{p3}
 ``The open-source graphical library,'' \url{https://processing.org}, 2020.
 

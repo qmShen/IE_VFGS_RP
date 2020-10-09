@@ -18,45 +18,45 @@ Warning--I didn't find a database entry for "setcover"
 Warning--missing school in borcan2012improving
 
 Done.
-You've used 48 entries,
+You've used 49 entries,
             4087 wiz_defined-function locations,
-            1072 strings with 15446 characters,
-and the built_in function-call counts, 38900 in all, are:
-= -- 3132
-> -- 977
+            1075 strings with 15534 characters,
+and the built_in function-call counts, 39197 in all, are:
+= -- 3154
+> -- 978
 < -- 366
-+ -- 547
++ -- 548
 - -- 164
-* -- 1865
-:= -- 5597
-add.period$ -- 106
-call.type$ -- 48
-change.case$ -- 48
+* -- 1873
+:= -- 5645
+add.period$ -- 108
+call.type$ -- 49
+change.case$ -- 49
 chr.to.int$ -- 831
-cite$ -- 49
-duplicate$ -- 2747
-empty$ -- 3029
+cite$ -- 50
+duplicate$ -- 2776
+empty$ -- 3064
 format.name$ -- 198
-if$ -- 9125
+if$ -- 9194
 int.to.chr$ -- 0
-int.to.str$ -- 48
-missing$ -- 493
-newline$ -- 167
+int.to.str$ -- 49
+missing$ -- 499
+newline$ -- 170
 num.names$ -- 38
-pop$ -- 1120
+pop$ -- 1139
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 3017
+skip$ -- 3043
 stack$ -- 0
-substring$ -- 1990
-swap$ -- 2341
+substring$ -- 1991
+swap$ -- 2355
 text.length$ -- 89
 text.prefix$ -- 0
 top$ -- 5
-type$ -- 48
+type$ -- 49
 warning$ -- 1
 while$ -- 175
-width$ -- 50
-write$ -- 486
+width$ -- 51
+write$ -- 493
 (There were 3 warnings)

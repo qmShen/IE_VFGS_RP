@@ -1,24 +1,25 @@
 \section{Experimental Evaluation}\label{sec:exp}
-We evaluate our techniques on two real-world trajectory datasets: \pt{} and \sz{}.
+We evaluate our techniques on two real-world trajectory datasets: \pt{}, \sz{} and \cd{}.
 \pt{}~\cite{pt} contains a total of 2.39 million taxi trajectories and 75.67 million of GPS points, and the longest trajectory has 3,490 GPS points.
-\sz{}~\cite{sz} consists of 3.07 million taxi trajectories with 53.53 million GPS points, and the longest trajectory has 2,268 GPS points. All experiments are conducted on a machine with an Intel i7-8700 CPU, 24 GB memory and an NVIDIA GeForce GTX1080 GPU with 8 GB on-chip memory, running on Windows 10. All methods are implemented in Java 1.8, and the Processing 3 library~\cite{p3} is used for rendering. All datasets and source codes required to reproduce our results are available at~\cite{code}.
+\sz{}~\cite{sz} consists of 3.07 million taxi trajectories with 53.53 million GPS points, and the longest trajectory has 2,268 GPS points. 
+\cd{}~\cite{cd} consists of \QM{0.28} million taxi trajectories with \QM{6.69} million GPS points, and the longest trajectory has \QM{4025} GPS points.  All experiments are conducted on a machine with an Intel i7-8700 CPU, 24 GB memory and an NVIDIA GeForce GTX1080 GPU with 8 GB on-chip memory, running on Windows 10. All methods are implemented in Java 1.8, and the Processing 3 library~\cite{p3} is used for rendering. All datasets and source codes required to reproduce our results are available at~\cite{code}.
 
 %\REPORT{
 This section is organized as follows.
-In Section~\ref{sec:case}, we present several case studies of the visualization results on the \pt{} and \sz{} datasets to demonstrate the merits of our methods.
+In Section~\ref{sec:case}, we present several case studies of the visualization results on the \pt{} datasets to demonstrate the merits of our methods.
 % In Section~\ref{sec:case}, we evaluate the effectiveness of our proposal by the case studies on \pt{} and \sz{} trajectory dataset, respectively.
 %}
-In Section~\ref{sec:user}, we conduct a comprehensive user study to test the effectiveness of our visualization results on practical  tasks including \textit{region center identification}, \textit{reachable route inspection} and \textit{traffic flow comparison}. In Section~\ref{sec:quality}, we quantitatively evaluate the fidelity loss and efficiency of our methods.
+In Section~\ref{sec:user}, we conduct a comprehensive user study to test the effectiveness of our visualization results on practical tasks including \textit{region center identification}, \textit{reachable route inspection} and \textit{traffic flow comparison}. In Section~\ref{sec:quality}, we quantitatively evaluate the visual quality and efficiency of our methods on all these three datasets.
 
 % and has been cleaned for further analysis.
 \trim \trim
 
-\subsection{Case studies}
-\subsubsection{Effectiveness of overview}\label{sec:case}
+\subsection{Case studies}\label{sec:case}
+\subsubsection{Effectiveness of overview visualization}
 
 \begin{figure*}[t]
 	\centering
-	\includegraphics[width=0.95\textwidth]{pictures/experiment_study/case_study_overview.pdf}
+	\includegraphics[width=0.95\textwidth]{pictures/case_study_icde/case_study_overview.pdf}
 	\vspace{-3mm}
 	\caption{Effectiveness studies of $\avats$ at overview visualization in \pt{}.}
 	\label{fig:overview}
@@ -28,16 +29,15 @@ In Section~\ref{sec:user}, we conduct a comprehensive user study to test the eff
 
 We conduct case study in \pt{}, shown as the visualization results in Figure~\ref{fig:overview}, to demonstrate the effectiveness our proposals from the following aspects.
 
-
-\stitle{Consistently good visual fidelity at overview}
+\stitle{Consistently good visual quality at overview}
 At zoom level 11, Figure~\ref{fig:overview}(A) is the visualization result of the full \pt{} dataset.
-With a sampling rate $\alpha \!=\! 1\%$, Figures~\ref{fig:overview}(B) and (C) are the visualizations produced by uniform random sampling ($\rand$), distance based sampling (\ref{}),   
+With a sampling rate $\alpha \!=\! 1\%$, Figures~\ref{fig:overview}(B) and (C) are the visualizations produced by uniform random sampling ($\rand$), $\baseline$~\cite{borcan2012improving},   
 and our visual quality-guaranteed sampling method ($\avats$, \QM{Algorithm~\ref{alg:plus}}), respectively. Comparing with Figure~\ref{fig:overview}(B) and (C), it is obvious that Figure~\ref{fig:overview}(E) is more similar to Figure~\ref{fig:overview}(A). In particular, Figure~\ref{fig:overview}(E) not only preserves the overall visual structure of the entire region but also keeps the details of cities that are far from the center (marked by the dashed cycles in the figure). However, the details of these cities are lost in Figure~\ref{fig:overview}(C) as $\rand{}$ mostly preserve trajectories in the dense region. \QM{On the other sides, the distance based sampling keeps the trajectories in the sparse regions but cannot guarantee visual quality.} 
 
-\stitle{Consistently good visual fidelity under different sampling rates}
-Figures~\ref{fig:overview}(D) and (E) are the visualizations produced by $\avats{}$ with a sampling rate of $0.1\%$ and $1\%$. We can make two observations: (i) the larger the sampling rate, the better the visual fidelity, i.e., Figures~\ref{fig:overview}(C) and (E) are more similar to Figure~\ref{fig:overview}(A) compared with Figures~\ref{fig:overview}(B) and (D); (ii) the visualization of $\avats$ with a sampling rate of $0.1\%$ (i.e., Figure~\ref{fig:overview}(D)) looks even more appealing than the visualization of $\rand{}$ with a sampling rate of $1\%$ (i.e., Figure~\ref{fig:overview}(C)) as Figure~\ref{fig:teaser}(D) better captures the overall visual structure of Figure~\ref{fig:overview}(A).
+\stitle{Consistently good visual quality under different sampling rates}
+Figures~\ref{fig:overview}(D) and (E) are the visualizations produced by $\avats{}$ with a sampling rate of $0.1\%$ and $1\%$. We can make two observations: (i) the larger the sampling rate, the better the visual quality, i.e., Figures~\ref{fig:overview}(C) and (E) are more similar to Figure~\ref{fig:overview}(A) compared with Figures~\ref{fig:overview}(B) and (D); (ii) the visualization of $\avats$ with a sampling rate of $0.1\%$ (i.e., Figure~\ref{fig:overview}(D)) looks even more appealing than the visualization of $\rand{}$ with a sampling rate of $1\%$ (i.e., Figure~\ref{fig:overview}(C)) as Figure~\ref{fig:teaser}(D) better captures the overall visual structure of Figure~\ref{fig:overview}(A).
 
-%Figures~\ref{fig:teaser}(D) and (E) are the visualizations produced by $\rand{}$ with a sampling rate of $0.1\%$ and $1\%$, respectively, while Figures~\ref{fig:teaser}(D) and (E) are the visualizations generated by our $\avats{}$ algorithm at the same sampling rates. We can make two observations: (i) the larger the sampling rate, the better the visual fidelity, i.e., Figures~\ref{fig:teaser}(C) and (E) are more similar to Figure~\ref{fig:teaser}(A) compared with Figures~\ref{fig:teaser}(B) and (D); (ii) the visualization of $\avats$ with a sampling rate of $0.1\%$ (i.e., Figure~\ref{fig:teaser}(D)) looks even more appealing than the visualization of $\rand{}$ with a sampling rate of $1\%$ (i.e., Figure~\ref{fig:teaser}(C)) as Figure~\ref{fig:teaser}(D) better captures the overall visual structure of Figure~\ref{fig:teaser}(A).
+%Figures~\ref{fig:teaser}(D) and (E) are the visualizations produced by $\rand{}$ with a sampling rate of $0.1\%$ and $1\%$, respectively, while Figures~\ref{fig:teaser}(D) and (E) are the visualizations generated by our $\avats{}$ algorithm at the same sampling rates. We can make two observations: (i) the larger the sampling rate, the better the visual quality, i.e., Figures~\ref{fig:teaser}(C) and (E) are more similar to Figure~\ref{fig:teaser}(A) compared with Figures~\ref{fig:teaser}(B) and (D); (ii) the visualization of $\avats$ with a sampling rate of $0.1\%$ (i.e., Figure~\ref{fig:teaser}(D)) looks even more appealing than the visualization of $\rand{}$ with a sampling rate of $1\%$ (i.e., Figure~\ref{fig:teaser}(C)) as Figure~\ref{fig:teaser}(D) better captures the overall visual structure of Figure~\ref{fig:teaser}(A).
 
 \stitle{Color encoding effectively mitigates visual clutter}
 % Then, we present the superiority of the color encoding scheme in $\avats$, which denotes as $\cavats$ in subsequent sections.
@@ -50,15 +50,14 @@ Visual clutter is severe for the full dataset (i.e., Figure~\ref{fig:overview}(A
 
 \begin{figure*}[t]
 	\centering
-	\includegraphics[width=0.95\textwidth]{pictures/case_study_icde/case_study_detail_view.pdf}
+	\includegraphics[width=0.95\textwidth]{pictures/case_study_icde/case_study_detail.pdf}
 	\vspace{-3mm}
 	\caption{Effectiveness studies of $\avats$ at detail visualization.}
 	\label{fig:detailview}
 	\vspace{-2mm}
 \end{figure*}
 
-We next present the effectiveness of our proposals with detail views by investigating two regions of interest in \pt{}, as shown in Fig.~\ref{fig:detailview}(A). 
-
+We next present the effectiveness of our proposals with detail views by investigating two regions of interest in \pt{}, the dense region(shown as in Fig.~\ref{fig:detailview}(8A))
 
 \stitle{Dense region}
 R1 is the center of Porto, which has the highest concentration of the trajectories and causes serious visual clutter, as visualized in Fig.~\ref{fig:detailview}(B4).
