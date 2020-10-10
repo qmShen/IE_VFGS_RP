@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.6.29) (preloaded format=pdflatex 2020.7.30)  9 OCT 2020 21:58
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.6.29) (preloaded format=pdflatex 2020.7.30)  10 OCT 2020 20:19
 entering extended mode
 **./ICDE_VFGS.tex
 (ICDE_VFGS.tex
@@ -343,35 +343,42 @@ LaTeX Font Info:    Trying to load font information for OT1+phv on input line 8
  ("C:\Program Files\MiKTeX\tex/latex/psnfss\ot1phv.fd"
 File: ot1phv.fd 2020/03/25 scalable font definitions for OT1/phv.
 )
-
-LaTeX Warning: Citation `clutter' on page 1 undefined on input line 25.
-
-<pictures/Teaser.pdf, id=1, 3745.65364pt x 2484.02026pt>
-File: pictures/Teaser.pdf Graphic file (type pdf)
-<use pictures/Teaser.pdf>
-Package pdftex.def Info: pictures/Teaser.pdf  used on input line 51.
-(pdftex.def)             Requested size: 464.39685pt x 307.96227pt.
-
 Underfull \vbox (badness 2600) has occurred while \output is active []
 
  [1{C:/Users/Qiaomu/AppData/Local/MiKTeX/pdftex/config/pdftex.map}
 
 
-] [2 <./pictures/Teaser.pdf>]) (sections/RelatedWork.tex
+]
+<pictures/case_study_icde/case_study_overview.pdf, id=13, 3758.04pt x 1817.0083
+pt>
+File: pictures/case_study_icde/case_study_overview.pdf Graphic file (type pdf)
+<use pictures/case_study_icde/case_study_overview.pdf>
+Package pdftex.def Info: pictures/case_study_icde/case_study_overview.pdf  used
+ on input line 93.
+(pdftex.def)             Requested size: 490.19843pt x 236.99568pt.
+
+Underfull \vbox (badness 1558) has occurred while \output is active []
+
+)
+(sections/RelatedWork.tex [2]
 
 pdfTeX warning: pdflatex.exe (file ./pictures/framework/framework.pdf): PDF inc
 lusion: found PDF version <1.7>, but at most version <1.5> allowed
-<pictures/framework/framework.pdf, id=82, 563.10374pt x 170.6375pt>
+<pictures/framework/framework.pdf, id=18, 563.10374pt x 170.6375pt>
 File: pictures/framework/framework.pdf Graphic file (type pdf)
 <use pictures/framework/framework.pdf>
 Package pdftex.def Info: pictures/framework/framework.pdf  used on input line 3
 8.
 (pdftex.def)             Requested size: 206.39685pt x 62.54384pt.
-) (sections/ProblemFormulation.tex
+
+Underfull \vbox (badness 8132) has occurred while \output is active []
+
+)
+(sections/ProblemFormulation.tex
 
 pdfTeX warning: pdflatex.exe (file ./pictures/problemsolveing/RenderedPixels.pd
 f): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<pictures/problemsolveing/RenderedPixels.pdf, id=83, 831.65405pt x 498.99222pt>
+<pictures/problemsolveing/RenderedPixels.pdf, id=19, 831.65405pt x 498.99222pt>
 
 File: pictures/problemsolveing/RenderedPixels.pdf Graphic file (type pdf)
 <use pictures/problemsolveing/RenderedPixels.pdf>
@@ -382,7 +389,7 @@ nput line 8.
 
 pdfTeX warning: pdflatex.exe (file ./pictures/problemsolveing/TrajZoomIn.pdf): 
 PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<pictures/problemsolveing/TrajZoomIn.pdf, id=84, 874.36562pt x 472.15698pt>
+<pictures/problemsolveing/TrajZoomIn.pdf, id=20, 874.36562pt x 472.15698pt>
 File: pictures/problemsolveing/TrajZoomIn.pdf Graphic file (type pdf)
 <use pictures/problemsolveing/TrajZoomIn.pdf>
 Package pdftex.def Info: pictures/problemsolveing/TrajZoomIn.pdf  used on input
@@ -393,14 +400,19 @@ Overfull \hbox (1.31711pt too wide) in paragraph at lines 7--17
  [][] 
  []
 
-[3 <./pictures/framework/framework.pdf>]
-Underfull \hbox (badness 2334) in paragraph at lines 40--41
-[]\OT1/ptm/m/n/10 If there is a so-lu-tion for the above fidelity-optimal
+[3 <./pictures/case_study_icde/case_study_overview.pdf> <./pictures/framework/f
+ramework.pdf
+
+pdfTeX warning: pdflatex.exe (file ./pictures/framework/framework.pdf): PDF inc
+lusion: multiple pdfs with page group included in a single page
+>]
+Underfull \hbox (badness 2452) in paragraph at lines 40--41
+[]\OT1/ptm/m/n/10 If there is a so-lu-tion for the above quality-optimal
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 40--41
-\OT1/ptm/m/n/10 sam-pling prob-lem, to pro-vide a guar-an-teed fi-delity
+\OT1/ptm/m/n/10 sam-pling prob-lem, to pro-vide a guar-an-teed qual-ity
  []
 
 
@@ -424,7 +436,7 @@ LaTeX Warning: Citation `setcover' on page 5 undefined on input line 69.
 
 pdfTeX warning: pdflatex.exe (file ./pictures/1st.pdf): PDF inclusion: found PD
 F version <1.7>, but at most version <1.5> allowed
-<pictures/1st.pdf, id=126, 216.81pt x 172.2435pt>
+<pictures/1st.pdf, id=85, 216.81pt x 172.2435pt>
 File: pictures/1st.pdf Graphic file (type pdf)
 <use pictures/1st.pdf>
 Package pdftex.def Info: pictures/1st.pdf  used on input line 106.
@@ -433,7 +445,7 @@ Package pdftex.def Info: pictures/1st.pdf  used on input line 106.
 
 pdfTeX warning: pdflatex.exe (file ./pictures/2nd.pdf): PDF inclusion: found PD
 F version <1.7>, but at most version <1.5> allowed
-<pictures/2nd.pdf, id=127, 216.81pt x 172.2435pt>
+<pictures/2nd.pdf, id=86, 216.81pt x 172.2435pt>
 File: pictures/2nd.pdf Graphic file (type pdf)
 <use pictures/2nd.pdf>
 Package pdftex.def Info: pictures/2nd.pdf  used on input line 108.
@@ -443,89 +455,75 @@ Package pdftex.def Info: pictures/2nd.pdf  used on input line 108.
 pdfTeX warning: pdflatex.exe (file ./pictures/2nd.pdf): PDF inclusion: multiple
  pdfs with page group included in a single page
 >]
-<pictures/problemsolveing/delta_motivation.pdf, id=169, 2652.91125pt x 878.2812
+<pictures/problemsolveing/delta_motivation.pdf, id=127, 2652.91125pt x 878.2812
 5pt>
 File: pictures/problemsolveing/delta_motivation.pdf Graphic file (type pdf)
 <use pictures/problemsolveing/delta_motivation.pdf>
 Package pdftex.def Info: pictures/problemsolveing/delta_motivation.pdf  used on
  input line 178.
 (pdftex.def)             Requested size: 247.6778pt x 81.99022pt.
- [6 <./pictures/problemsolveing/delta_motivation.pdf>]
-<pictures/problemsolveing/one_to_many.pdf, id=209, 1419.24222pt x 495.25426pt>
+<pictures/problemsolveing/one_to_many.pdf, id=128, 1419.24222pt x 495.25426pt>
 File: pictures/problemsolveing/one_to_many.pdf Graphic file (type pdf)
 <use pictures/problemsolveing/one_to_many.pdf>
 Package pdftex.def Info: pictures/problemsolveing/one_to_many.pdf  used on inpu
 t line 242.
 (pdftex.def)             Requested size: 232.19843pt x 81.02574pt.
-)
-(sections/Evaluation.tex
-<pictures/case_study_icde/case_study_overview.pdf, id=210, 3758.04pt x 1817.008
-3pt>
-File: pictures/case_study_icde/case_study_overview.pdf Graphic file (type pdf)
-<use pictures/case_study_icde/case_study_overview.pdf>
-Package pdftex.def Info: pictures/case_study_icde/case_study_overview.pdf  used
- on input line 22.
-(pdftex.def)             Requested size: 490.19843pt x 236.99568pt.
-<pictures/case_study_icde/case_study_detail.pdf, id=211, 5489.97043pt x 1609.57
+) (sections/Evaluation.tex [6 <./pictures/problemsolveing/delta_motivation.pdf>
+] (sections/Evaluation_case_study.tex
+<pictures/case_study_icde/case_study_detail.pdf, id=168, 5489.97043pt x 1609.57
 341pt>
 File: pictures/case_study_icde/case_study_detail.pdf Graphic file (type pdf)
 <use pictures/case_study_icde/case_study_detail.pdf>
 Package pdftex.def Info: pictures/case_study_icde/case_study_detail.pdf  used o
-n input line 53.
+n input line 27.
 (pdftex.def)             Requested size: 490.19843pt x 143.70103pt.
-
-
-LaTeX Warning: Reference `fig:porto' on page 7 undefined on input line 64.
-
-(sections/Evaluation_user_study.tex [7 <./pictures/problemsolveing/one_to_many.
-pdf>]
-<pictures/user_study/interface.pdf, id=230, 2511.3825pt x 1865.97125pt>
+) (sections/Evaluation_user_study.tex
+[7 <./pictures/problemsolveing/one_to_many.pdf>]
+<pictures/user_study/interface.pdf, id=187, 2511.3825pt x 1865.97125pt>
 File: pictures/user_study/interface.pdf Graphic file (type pdf)
 <use pictures/user_study/interface.pdf>
 Package pdftex.def Info: pictures/user_study/interface.pdf  used on input line 
 7.
 (pdftex.def)             Requested size: 232.19843pt x 172.51422pt.
- [8 <./pictures/case_study_icde/case_study_overview.pdf> <./pictures/case_study
-_icde/case_study_detail.pdf
-
-pdfTeX warning: pdflatex.exe (file ./pictures/case_study_icde/case_study_detail
-.pdf): PDF inclusion: multiple pdfs with page group included in a single page
-> <./pictures/user_study/interface.pdf>]
-<pictures/userstudy.pdf, id=291, 361.35pt x 252.945pt>
+ [8 <./pictures/case_study_icde/case_study_detail.pdf> <./pictures/user_study/i
+nterface.pdf>]
+<pictures/userstudy.pdf, id=227, 361.35pt x 252.945pt>
 File: pictures/userstudy.pdf Graphic file (type pdf)
 <use pictures/userstudy.pdf>
 Package pdftex.def Info: pictures/userstudy.pdf  used on input line 88.
 (pdftex.def)             Requested size: 154.80157pt x 108.35896pt.
-<pictures/fporto.pdf, id=292, 328.22626pt x 229.85875pt>
+)
+(sections/Evaluation_quantitative_evaluation.tex
+<pictures/fporto.pdf, id=228, 328.22626pt x 229.85875pt>
 File: pictures/fporto.pdf Graphic file (type pdf)
 <use pictures/fporto.pdf>
-Package pdftex.def Info: pictures/fporto.pdf  used on input line 122.
+Package pdftex.def Info: pictures/fporto.pdf  used on input line 10.
 (pdftex.def)             Requested size: 110.88062pt x 77.64938pt.
-<pictures/fshenzhen.pdf, id=293, 328.22626pt x 229.85875pt>
+<pictures/fshenzhen.pdf, id=229, 328.22626pt x 229.85875pt>
 File: pictures/fshenzhen.pdf Graphic file (type pdf)
 <use pictures/fshenzhen.pdf>
-Package pdftex.def Info: pictures/fshenzhen.pdf  used on input line 124.
+Package pdftex.def Info: pictures/fshenzhen.pdf  used on input line 12.
 (pdftex.def)             Requested size: 110.88062pt x 77.64938pt.
- [9 <./pictures/userstudy.pdf>]
-<pictures/tporto.pdf, id=300, 328.22626pt x 236.885pt>
+<pictures/tporto.pdf, id=230, 328.22626pt x 236.885pt>
 File: pictures/tporto.pdf Graphic file (type pdf)
 <use pictures/tporto.pdf>
-Package pdftex.def Info: pictures/tporto.pdf  used on input line 155.
+Package pdftex.def Info: pictures/tporto.pdf  used on input line 43.
 (pdftex.def)             Requested size: 110.88062pt x 80.02295pt.
-<pictures/tshenzhen.pdf, id=301, 328.22626pt x 237.88875pt>
+<pictures/tshenzhen.pdf, id=231, 328.22626pt x 237.88875pt>
 File: pictures/tshenzhen.pdf Graphic file (type pdf)
 <use pictures/tshenzhen.pdf>
-Package pdftex.def Info: pictures/tshenzhen.pdf  used on input line 157.
+Package pdftex.def Info: pictures/tshenzhen.pdf  used on input line 45.
 (pdftex.def)             Requested size: 110.88062pt x 80.36201pt.
-))
-(sections/ConclusionFutureWork.tex
+ [9 <./pictures/userstudy.pdf> <./pictures/fporto.pdf> <./pictures/fshenzhen.pd
+f> <./pictures/tporto.pdf> <./pictures/tshenzhen.pdf>])) (sections/ConclusionFu
+tureWork.tex
 Underfull \hbox (badness 10000) in paragraph at lines 13--15
 []\OT1/ptm/m/n/10 This pa-per presents a novel sam-pling tech-nique,
  []
 
 
-Underfull \hbox (badness 1389) in paragraph at lines 13--15
-[]$\OT1/ptm/m/n/10 , that guar-an-tees the vi-sual fi-delity of line-
+Underfull \hbox (badness 1478) in paragraph at lines 13--15
+[]$\OT1/ptm/m/n/10 , that guar-an-tees the vi-sual qual-ity of line-
  []
 
 
@@ -534,13 +532,12 @@ Underfull \hbox (badness 1755) in paragraph at lines 13--15
 d
  []
 
-) (ICDE_VFGS.bbl [10 <./pictures/fporto.pdf> <./pictures/fshenzhen.pdf> <./pict
-ures/tporto.pdf> <./pictures/tshenzhen.pdf>]
+) (ICDE_VFGS.bbl
 Underfull \hbox (badness 6493) in paragraph at lines 174--179
 []\OT1/ptm/m/n/8 R. Kr[]uger, D. Thom, M. W[]orner, H. Bosch, and T. Ertl,
  []
 
-)
+[10])
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -552,16 +549,18 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[11] (ICDE_VFGS.aux)
+[11
+
+] (ICDE_VFGS.aux)
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 4757 strings out of 480790
- 70050 string characters out of 2907052
- 319947 words of memory out of 3000000
- 20662 multiletter control sequences out of 15000+200000
+ 4756 strings out of 480790
+ 70271 string characters out of 2907052
+ 319936 words of memory out of 3000000
+ 20656 multiletter control sequences out of 15000+200000
  588480 words of font info for 134 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  30i,12n,37p,2140b,315s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -580,9 +579,9 @@ TeX/fonts/type1/urw/helvetic/uhvr8a.pfb><C:/Program Files/MiKTeX/fonts/type1/ur
 w/times/utmb8a.pfb><C:/Program Files/MiKTeX/fonts/type1/urw/times/utmbi8a.pfb><
 C:/Program Files/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Program Files/MiKT
 eX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on ICDE_VFGS.pdf (11 pages, 13636560 bytes).
+Output written on ICDE_VFGS.pdf (11 pages, 10763908 bytes).
 PDF statistics:
- 382 PDF objects out of 1000 (max. 8388607)
+ 318 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 81 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 76 words of extra memory for PDF output out of 10000 (max. 10000000)
 
