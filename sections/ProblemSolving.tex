@@ -1,13 +1,13 @@
 \section{Our Solution: $\vats$}\label{sec:sol}
-In this part, we address the second technical challenge: \emph{how to devise an efficient sampling algorithm that provides guaranteed visual fidelity?}
-Specifically, we first propose a visual fidelity-guaranteed sampling algorithm $\vats$ in Section~\ref{sec:greedy}. Next, we devise optimizations to improve the efficiency of $\vats$ in Section~\ref{sec:opt}.
+In this part, we address the second technical challenge: \emph{how to devise an efficient sampling algorithm that provides guaranteed visual quality?}
+Specifically, we first propose a visual quality-guaranteed sampling algorithm $\vats$ in Section~\ref{sec:greedy}. Next, we devise optimizations to improve the efficiency of $\vats$ in Section~\ref{sec:opt}.
 
-\subsection{Visual Fidelity-Guaranteed Sampling}\label{sec:greedy}
+\subsection{Visual quality-Guaranteed Sampling}\label{sec:greedy}
 %Due to the hardness of Problem~\ref{prob:def}, the straight-forward solution is uniform random sampling $\rand$.
 %This solution randomly selects $k$ trajectories from the dataset $\D$ and stores them in the result set $\oR$. The selected trajectories in $\oR$ are rendered as the visualization result.
-%Obviously, uniform random sampling $\rand$ does not provide any guarantee on the visual fidelity of the sampled set.
+%Obviously, uniform random sampling $\rand$ does not provide any guarantee on the visual quality of the sampled set.
 
-Our visual fidelity-guaranteed sampling method $\vats$ is presented in Algorithm~\ref{alg:greedy}, which employs a greedy paradigm.
+Our visual quality-guaranteed sampling method $\vats$ is presented in Algorithm~\ref{alg:greedy}, which employs a greedy paradigm.
 In particular, it finds the trajectory $tmp$ in $\D$ that maximizes $| tmp \cup \oR|$ at each iteration, as shown in Line~\ref{line:max} of Algorithm~\ref{alg:greedy}.
 It terminates after $k=\alpha |\D|$ iterations and returns $\oR$ as the result set for rendering.
 
@@ -25,14 +25,14 @@ It terminates after $k=\alpha |\D|$ iterations and returns $\oR$ as the result s
 \end{algorithm}
 
 
-Interestingly, Algorithm~\ref{alg:greedy} provides provable visual fidelity guarantee for the returned result $\oR$, as stated in Theorem~\ref{the:ratio}.
+Interestingly, Algorithm~\ref{alg:greedy} provides provable visual quality guarantee for the returned result $\oR$, as stated in Theorem~\ref{the:ratio}.
 %~\footnote{We omitted all the proofs of the theorems and lemmata in this work due to space reasons, and refer the interested readers to our technical report\cite{techreport}.}
 
 \begin{theorem}~\label{the:ratio}
-Define the visual fidelity of a sample set $\mathcal{S}$ as $f(\mathcal{S})=1-loss(\V(\D),\V(\mathcal{S}))$. Let the sized-k result produced by Algorithm~\ref{alg:greedy} be $\mathcal{R}$ and the sized-k solution of Equation~\eqref{eq:opp} be $\mathcal{R}^{\star}$, we have $f(\mathcal{R})\ge 0.632*f(\mathcal{R}^{\star})$.
+Define the visual quality of a sample set $\mathcal{S}$ as $f(\mathcal{S})=1-loss(\V(\D),\V(\mathcal{S}))$. Let the sized-k result produced by Algorithm~\ref{alg:greedy} be $\mathcal{R}$ and the sized-k solution of Equation~\eqref{eq:opp} be $\mathcal{R}^{\star}$, we have $f(\mathcal{R})\ge 0.632*f(\mathcal{R}^{\star})$.
 \end{theorem}
 
-Theorem~\ref{the:ratio} follows directly from the submodularity of the visual fidelity function $f(\mathcal{S})$ as it is well known that the greedy solution provides a $0.632$ approximation of the optimal solution for a submodular function. We show that submodularity of $f(\mathcal{S})$ as follows.      
+Theorem~\ref{the:ratio} follows directly from the submodularity of the visual quality function $f(\mathcal{S})$ as it is well known that the greedy solution provides a $0.632$ approximation of the optimal solution for a submodular function. We show that submodularity of $f(\mathcal{S})$ as follows.      
 
 \begin{lemma}[Submodularity]\label{lem:submodular}
 	Define the contribution of a trajectory $t$ to the result set $\oR$ as $\Delta(\oR, t) = |V(\oR \cup t)| - |V(\oR)|$.
@@ -70,12 +70,12 @@ Theorem~\ref{the:ratio} follows directly from the submodularity of the visual fi
 %It is equivalent to $b_k = f(\mathcal{R}) \geq (1 - (1-1/k)^{k}) \cdot f(\mathcal{R}^{\star}) \geq (1-1/e) \cdot f(\mathcal{R}^{\star}) \approx 0.632 \cdot f(\mathcal{R}^{\star})$.
 %\end{proof}
 
-Although Algorithm~\ref{alg:greedy} provides fidelity guarantee for the result set $\oR$, it has a high time complexity, which we show in the following analysis.  
+Although Algorithm~\ref{alg:greedy} provides quality guarantee for the result set $\oR$, it has a high time complexity, which we show in the following analysis.  
 
  
 
 
-%With the above theoretical analysis, Algorithm~\ref{alg:greedy} offers a visual fidelity-guaranteed sampling algorithm for the large-scale trajectory data visualization problem.
+%With the above theoretical analysis, Algorithm~\ref{alg:greedy} offers a visual quality-guaranteed sampling algorithm for the large-scale trajectory data visualization problem.
 %However, as the time complexity analyzed in Lemma~\ref{lem:cost}, it is not scalable to large-scale trajectory datasets (e.g., millions of trajectories).
 
 
@@ -155,7 +155,7 @@ To exemplify, Algorithm~\ref{alg:greedy} takes 413.6 seconds to return the resul
 
 \section{Advanced Approach: $\avats$}\label{sec:aa}
 
-In the previous section, we presented the $\vats$ algorithm, which produces fidelity-guaranteed samples and runs efficiently. 
+In the previous section, we presented the $\vats$ algorithm, which produces quality-guaranteed samples and runs efficiently. 
 In this section, we focus on the third technical challenge: \emph{how to tackle the visual clutter problem in large trajectory visualization}?
 In particular, we devise an advanced approach $\avats$ by considering
 (i) trajectory data distribution, and (ii) human perception capability.
@@ -188,7 +188,7 @@ the pixels around $(x,y)$, i.e., from $(x-\delta, y-\delta)$ to $(x+\delta, y+\d
 where $\oR^{+}$ includes both the selected trajectories and their tolerance pixels (in Line~\ref{line:delta}).      
 
   
-%Taking the above two observations into consideration, we can further improve the returning result of visual fidelity-guaranteed sampling approach $\vats$ by
+%Taking the above two observations into consideration, we can further improve the returning result of visual quality-guaranteed sampling approach $\vats$ by
 %delivering rich information at sparse regions and reducing visual clutter in dense regions.
 %In this section, we devise the advanced approach $\avats$ (see Algorithm~\ref{alg:plus}) to achieve the above two objectives.
 %In specific, we introduce perception tolerance parameter $\delta$ in $\avats$, which models the perception capability of humans at the highest level of details.
@@ -226,7 +226,7 @@ where $\oR^{+}$ includes both the selected trajectories and their tolerance pixe
 %instead of only choosing the trajectory with the largest uncovered pixels in $\vats$ (Algorithm~\ref{alg:greedy}).
 
 
-$\vats$ in Algorithm~\ref{alg:greedy} selects trajectories with good representativeness and some trajectories will not be included into the result set $\oR$ even though they have more uncovered pixels w.r.t. $\oR$. The reason is that their uncovered pixels are too close to the pixels in the selected trajectories (i.e., within the tolerance area of selected pixels). Take Figure~\ref{fig:zoom}(A) for example, suppose $\delta=1$ and trajectory $a$ was selected at the first iteration, the trajectory to select in the second iteration is $c$ instead of $b$ because almost all pixels in $b$ is in the tolerance area of $a$'s. $\avats$ also provides excellent visual fidelity at arbitrary zooming resolutions. This is because it considers the perception tolerance parameter $\delta$  at the highest zoom level. For example, the zoom level in Figure~\ref{fig:zoom}(A) is higher than that in Figure~\ref{fig:zoom}(B).
+$\vats$ in Algorithm~\ref{alg:greedy} selects trajectories with good representativeness and some trajectories will not be included into the result set $\oR$ even though they have more uncovered pixels w.r.t. $\oR$. The reason is that their uncovered pixels are too close to the pixels in the selected trajectories (i.e., within the tolerance area of selected pixels). Take Figure~\ref{fig:zoom}(A) for example, suppose $\delta=1$ and trajectory $a$ was selected at the first iteration, the trajectory to select in the second iteration is $c$ instead of $b$ because almost all pixels in $b$ is in the tolerance area of $a$'s. $\avats$ also provides excellent visual quality at arbitrary zooming resolutions. This is because it considers the perception tolerance parameter $\delta$  at the highest zoom level. For example, the zoom level in Figure~\ref{fig:zoom}(A) is higher than that in Figure~\ref{fig:zoom}(B).
 According to our elaboration, $\avats$ selects trajectory $a$ and $c$ for Figure~\ref{fig:zoom}(A).
 When the area is zoomed out, as shown in Figure~\ref{fig:zoom}(b), trajectory $a$ and $c$ still captures the main sketch of the underlying dataset (as gray cells shown).
 We will further elaborate this phenomenon by the experimental study in Section~\ref{sec:exp}.
