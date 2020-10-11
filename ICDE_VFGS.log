@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.6.29) (preloaded format=pdflatex 2020.7.30)  10 OCT 2020 22:16
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.6.29) (preloaded format=pdflatex 2020.7.30)  11 OCT 2020 16:24
 entering extended mode
 **./ICDE_VFGS.tex
 (ICDE_VFGS.tex
@@ -467,56 +467,75 @@ Package pdftex.def Info: pictures/problemsolveing/one_to_many.pdf  used on inpu
 t line 242.
 (pdftex.def)             Requested size: 232.19843pt x 81.02574pt.
 ) (sections/Evaluation.tex [6 <./pictures/problemsolveing/delta_motivation.pdf>
-] (sections/Evaluation_case_study.tex
-<pictures/case_study_icde/case_study_detail.pdf, id=167, 5489.97043pt x 1609.57
-341pt>
+]
+
+LaTeX Warning: Reference `sec:user' on page 7 undefined on input line 12.
+
+(sections/Evaluation_case_study.tex
+<pictures/case_study_icde/case_study_detail.pdf, id=167, 5543.75143pt x 1819.62
+807pt>
 File: pictures/case_study_icde/case_study_detail.pdf Graphic file (type pdf)
 <use pictures/case_study_icde/case_study_detail.pdf>
 Package pdftex.def Info: pictures/case_study_icde/case_study_detail.pdf  used o
 n input line 27.
-(pdftex.def)             Requested size: 490.19843pt x 143.70103pt.
-) (sections/Evaluation_user_study.tex
-<pictures/user_study/interface.pdf, id=168, 2511.3825pt x 1865.97125pt>
-File: pictures/user_study/interface.pdf Graphic file (type pdf)
-<use pictures/user_study/interface.pdf>
-Package pdftex.def Info: pictures/user_study/interface.pdf  used on input line 
-7.
-(pdftex.def)             Requested size: 232.19843pt x 172.51422pt.
-
-Underfull \vbox (badness 5008) has occurred while \output is active []
-
- [7 <./pictures/problemsolveing/one_to_many.pdf>] [8 <./pictures/case_study_icd
-e/case_study_detail.pdf> <./pictures/user_study/interface.pdf>]
-<pictures/userstudy.pdf, id=226, 361.35pt x 252.945pt>
-File: pictures/userstudy.pdf Graphic file (type pdf)
-<use pictures/userstudy.pdf>
-Package pdftex.def Info: pictures/userstudy.pdf  used on input line 88.
-(pdftex.def)             Requested size: 154.80157pt x 108.35896pt.
+(pdftex.def)             Requested size: 490.19843pt x 160.87187pt.
 )
 (sections/Evaluation_quantitative_evaluation.tex
-<pictures/fporto.pdf, id=227, 328.22626pt x 229.85875pt>
-File: pictures/fporto.pdf Graphic file (type pdf)
-<use pictures/fporto.pdf>
-Package pdftex.def Info: pictures/fporto.pdf  used on input line 10.
-(pdftex.def)             Requested size: 110.88062pt x 77.64938pt.
-<pictures/fshenzhen.pdf, id=228, 328.22626pt x 229.85875pt>
-File: pictures/fshenzhen.pdf Graphic file (type pdf)
-<use pictures/fshenzhen.pdf>
-Package pdftex.def Info: pictures/fshenzhen.pdf  used on input line 12.
-(pdftex.def)             Requested size: 110.88062pt x 77.64938pt.
-<pictures/tporto.pdf, id=229, 328.22626pt x 236.885pt>
+<pictures/quantitative_study_icde/sample_quality.png, id=168, 903.375pt x 239.8
+9626pt>
+File: pictures/quantitative_study_icde/sample_quality.png Graphic file (type pn
+g)
+<use pictures/quantitative_study_icde/sample_quality.png>
+Package pdftex.def Info: pictures/quantitative_study_icde/sample_quality.png  u
+sed on input line 9.
+(pdftex.def)             Requested size: 258.0pt x 68.5139pt.
+
+Overfull \hbox (6.0pt too wide) in paragraph at lines 9--11
+ [][] 
+ []
+
+<pictures/quantitative_study_icde/zoom_quality.png, id=170, 902.37125pt x 239.8
+9626pt>
+File: pictures/quantitative_study_icde/zoom_quality.png Graphic file (type png)
+
+<use pictures/quantitative_study_icde/zoom_quality.png>
+Package pdftex.def Info: pictures/quantitative_study_icde/zoom_quality.png  use
+d on input line 18.
+(pdftex.def)             Requested size: 258.0pt x 68.59076pt.
+
+Overfull \hbox (6.0pt too wide) in paragraph at lines 18--20
+ [][] 
+ []
+
+[7 <./pictures/problemsolveing/one_to_many.pdf>]
+<pictures/quantitative_study_icde/sample_time.png, id=189, 906.38625pt x 239.89
+626pt>
+File: pictures/quantitative_study_icde/sample_time.png Graphic file (type png)
+<use pictures/quantitative_study_icde/sample_time.png>
+Package pdftex.def Info: pictures/quantitative_study_icde/sample_time.png  used
+ on input line 42.
+(pdftex.def)             Requested size: 258.0pt x 68.28328pt.
+
+Overfull \hbox (6.0pt too wide) in paragraph at lines 42--44
+ [][] 
+ []
+
+<pictures/tporto.pdf, id=190, 328.22626pt x 236.885pt>
 File: pictures/tporto.pdf Graphic file (type pdf)
 <use pictures/tporto.pdf>
-Package pdftex.def Info: pictures/tporto.pdf  used on input line 43.
+Package pdftex.def Info: pictures/tporto.pdf  used on input line 53.
 (pdftex.def)             Requested size: 110.88062pt x 80.02295pt.
-<pictures/tshenzhen.pdf, id=230, 328.22626pt x 237.88875pt>
+<pictures/tshenzhen.pdf, id=191, 328.22626pt x 237.88875pt>
 File: pictures/tshenzhen.pdf Graphic file (type pdf)
 <use pictures/tshenzhen.pdf>
-Package pdftex.def Info: pictures/tshenzhen.pdf  used on input line 45.
+Package pdftex.def Info: pictures/tshenzhen.pdf  used on input line 55.
 (pdftex.def)             Requested size: 110.88062pt x 80.36201pt.
- [9 <./pictures/userstudy.pdf> <./pictures/fporto.pdf> <./pictures/fshenzhen.pd
-f> <./pictures/tporto.pdf> <./pictures/tshenzhen.pdf>])) (sections/ConclusionFu
-tureWork.tex
+
+Overfull \hbox (11.86656pt too wide) in paragraph at lines 78--85
+ [][] 
+ []
+
+)) (sections/ConclusionFutureWork.tex
 Underfull \hbox (badness 10000) in paragraph at lines 13--15
 []\OT1/ptm/m/n/10 This pa-per presents a novel sam-pling tech-nique,
  []
@@ -532,12 +551,15 @@ Underfull \hbox (badness 1755) in paragraph at lines 13--15
 d
  []
 
-) (ICDE_VFGS.bbl
+[8 <./pictures/case_study_icde/case_study_detail.pdf> <./pictures/quantitative_
+study_icde/sample_quality.png> <./pictures/quantitative_study_icde/zoom_quality
+.png> <./pictures/quantitative_study_icde/sample_time.png> <./pictures/tporto.p
+df> <./pictures/tshenzhen.pdf>]) (ICDE_VFGS.bbl
 Underfull \hbox (badness 6493) in paragraph at lines 174--179
 []\OT1/ptm/m/n/8 R. Kr[]uger, D. Thom, M. W[]orner, H. Bosch, and T. Ertl,
  []
 
-[10])
+[9])
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -549,7 +571,7 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[11
+[10
 
 ] (ICDE_VFGS.aux)
 
@@ -557,11 +579,11 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 4756 strings out of 480790
- 70271 string characters out of 2907052
- 319936 words of memory out of 3000000
- 20656 multiletter control sequences out of 15000+200000
- 588480 words of font info for 134 fonts, out of 3000000 for 9000
+ 4742 strings out of 480790
+ 70207 string characters out of 2907052
+ 320920 words of memory out of 3000000
+ 20647 multiletter control sequences out of 15000+200000
+ 585817 words of font info for 131 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  30i,12n,37p,2140b,315s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files/MiKTeX/fonts/enc/dvips/base/8r.enc}<C:/Program Files/MiKTeX
@@ -575,13 +597,14 @@ public/amsfonts/cm/cmss10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfo
 nts/cm/cmss8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10
 .pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Prog
 ram Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Program Files/MiK
-TeX/fonts/type1/urw/helvetic/uhvr8a.pfb><C:/Program Files/MiKTeX/fonts/type1/ur
-w/times/utmb8a.pfb><C:/Program Files/MiKTeX/fonts/type1/urw/times/utmbi8a.pfb><
-C:/Program Files/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Program Files/MiKT
-eX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on ICDE_VFGS.pdf (11 pages, 10763717 bytes).
+TeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files/MiKTeX/fonts/typ
+e1/urw/helvetic/uhvr8a.pfb><C:/Program Files/MiKTeX/fonts/type1/urw/times/utmb8
+a.pfb><C:/Program Files/MiKTeX/fonts/type1/urw/times/utmbi8a.pfb><C:/Program Fi
+les/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Program Files/MiKTeX/fonts/type
+1/urw/times/utmri8a.pfb>
+Output written on ICDE_VFGS.pdf (10 pages, 6009239 bytes).
 PDF statistics:
- 317 PDF objects out of 1000 (max. 8388607)
+ 302 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 76 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 71 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -26,7 +26,7 @@ Visual clutter is severe for the full dataset (i.e., Figure~\ref{fig:overview}(A
 	\centering
 	\includegraphics[width=0.95\textwidth]{pictures/case_study_icde/case_study_detail.pdf}
 	\vspace{-3mm}
-	\caption{Effectiveness studies of $\avats$ at detail visualization.}
+	\caption{Effectiveness studies of $\qtavats$ at detail visualization.}
 	\label{fig:detailview}
 	\vspace{-2mm}
 \end{figure*}
@@ -34,12 +34,12 @@ Visual clutter is severe for the full dataset (i.e., Figure~\ref{fig:overview}(A
 We next present the effectiveness of our proposals with detail views by investigating two regions of interest in \pt{}, the dense region B and the sparse region C(shown as in Figure~\ref{fig:detailview}(8)).
 
 \stitle{Dense region}
-Region B is the center of Porto, which has the highest concentration of the trajectories and causes serious visual clutter, as visualized in Figure~\ref{fig:detailview}(B1).
-For example, the circular structures of the main route(shown as Figure~\ref{fig:detailview}(B1$**$)) is unclear.
+Region B is the center of Porto with the zoom level of 15, which has the highest concentration of the trajectories and causes serious visual clutter, as visualized in Figure~\ref{fig:detailview}(B1).
+For example, the circular structures of the main route(shown as the dash circular region in Figure~\ref{fig:detailview}(B1)) is unclear.
 $\localavats$ alleviates the visual clutter by preserve the $1\%$ trajectories of the total regions but the clutter is still serious. Furthermore, $\avats$ performs better than $\localavats$ by preserving less trajectories and reduce the visual clutter. 
 
 
 \stitle{Sparse region}
-Region C includes the city of Casino Espinho at zoom level \QM{14}, which contains less trajectories than the center of Porto as the visualization result of full dataset shown in Figure~\ref{fig:detailview}(C1). 
+Region C includes the city of Casino Espinho at zoom level 14, which contains less trajectories than the center of Porto as the visualization result of full dataset shown in Figure~\ref{fig:detailview}(C1). 
 Given fix sampling rate $\alpha=1\%$, Figure~\ref{fig:detailview}(C2) indicates the visualization of $\localavats$. This visualization result misses a lot if detail information in this region, because the fix sampling rate preserves too few trajectories which is difficult to guarantee the visual quality.
 While $\avats$ in Figure~\ref{fig:detailview}(C3) performs much better than $\localavats$ as the sampling rate is automatically adjusted to according to the visual quality. In this visualization, the trajectory sketch of Casino Espinho is almost the same as it in Figure~\ref{fig:detailview}(C1), the visualized result of full dataset.
