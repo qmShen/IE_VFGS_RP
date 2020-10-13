@@ -10,7 +10,6 @@ Reallocating 'singl_function' (item size: 4) to 100 items.
 Reallocating 'wiz_functions' (item size: 4) to 6000 items.
 Reallocating 'singl_function' (item size: 4) to 100 items.
 Database file #1: ref.bib
-Warning--I didn't find a database entry for "clutter"
 Warning--I didn't find a database entry for "setcover"
 -- IEEEtran.bst version 1.14 (2015/08/26) by Michael Shell.
 -- http://www.michaelshell.org/tex/ieeetran/bibtex/
@@ -18,45 +17,45 @@ Warning--I didn't find a database entry for "setcover"
 Warning--missing school in borcan2012improving
 
 Done.
-You've used 49 entries,
+You've used 48 entries,
             4087 wiz_defined-function locations,
-            1075 strings with 15534 characters,
-and the built_in function-call counts, 39197 in all, are:
-= -- 3154
-> -- 978
+            1071 strings with 15473 characters,
+and the built_in function-call counts, 38900 in all, are:
+= -- 3132
+> -- 977
 < -- 366
-+ -- 548
++ -- 547
 - -- 164
-* -- 1873
-:= -- 5645
-add.period$ -- 108
-call.type$ -- 49
-change.case$ -- 49
+* -- 1865
+:= -- 5597
+add.period$ -- 106
+call.type$ -- 48
+change.case$ -- 48
 chr.to.int$ -- 831
-cite$ -- 50
-duplicate$ -- 2776
-empty$ -- 3064
+cite$ -- 49
+duplicate$ -- 2747
+empty$ -- 3029
 format.name$ -- 198
-if$ -- 9194
+if$ -- 9125
 int.to.chr$ -- 0
-int.to.str$ -- 49
-missing$ -- 499
-newline$ -- 170
+int.to.str$ -- 48
+missing$ -- 493
+newline$ -- 167
 num.names$ -- 38
-pop$ -- 1139
+pop$ -- 1120
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 3043
+skip$ -- 3017
 stack$ -- 0
-substring$ -- 1991
-swap$ -- 2355
+substring$ -- 1990
+swap$ -- 2341
 text.length$ -- 89
 text.prefix$ -- 0
 top$ -- 5
-type$ -- 49
+type$ -- 48
 warning$ -- 1
 while$ -- 175
-width$ -- 51
-write$ -- 493
-(There were 3 warnings)
+width$ -- 50
+write$ -- 486
+(There were 2 warnings)

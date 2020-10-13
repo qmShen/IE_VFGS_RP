@@ -2,25 +2,68 @@
 In this part, we quantitatively evaluate our proposals on the \pt{}, \cd{} and \sz{} trajectory datasets from two aspects:
 (i) visual quality and (ii) running time.
 
-
-
 \begin{figure}[t]
 	\centering
-	\includegraphics[width=0.5\textwidth]{pictures/quantitative_study_icde/sample_quality.png}
+	\includegraphics[width=0.5\textwidth]{pictures/quantitative_study_icde/rate_quality.png}
 	\vspace{-8mm}
-	\caption{Visual quality vs. sampling rates.}
+	\caption{Visual quality vs. sampling rates(T1).}
 	\label{fig:sample_quality}
 	\vspace{-3mm}
 \end{figure}
 
 \begin{figure}[t]
 	\centering
-	\includegraphics[width=0.5\textwidth]{pictures/quantitative_study_icde/zoom_quality.png}
+	\includegraphics[width=0.5\textwidth]{pictures/quantitative_study_icde/rate_rendertime.png}
 	\vspace{-8mm}
-	\caption{Visual quality vs. zoom level.}
-	\label{fig:zoom_quality}
+	\caption{Rendering time vs. sampling rates(T1).}
+	\label{fig:rate_quality}
 	\vspace{-3mm}
 \end{figure}
+
+
+\begin{figure}[t]
+	\centering
+	\includegraphics[width=0.5\textwidth]{pictures/quantitative_study_icde/size_rendertime.png}
+	\vspace{-8mm}
+	\caption{Region size vs. response time(T2).}
+	\label{fig:size_rendertime}
+	\vspace{-3mm}
+\end{figure}
+
+\begin{figure}[t]
+	\centering
+	\includegraphics[width=0.5\textwidth]{pictures/quantitative_study_icde/quality_rate.png}
+	\vspace{-8mm}
+	\caption{Region size vs. response time(T3).}
+	\label{fig:quality_rate}
+	\vspace{-3mm}
+\end{figure}
+
+\begin{figure}[t]
+	\centering
+	\includegraphics[width=0.5\textwidth]{pictures/quantitative_study_icde/rate_algtime.png}
+	\vspace{-8mm}
+	\caption{Sampling rate vs. algorithms time(T4).}
+	\label{fig:rate_algtime}
+	\vspace{-3mm}
+\end{figure}
+%\begin{figure}[t]
+%	\centering
+%	\includegraphics[width=0.5\textwidth]{pictures/quantitative_study_icde/sample_quality.png}
+%	\vspace{-8mm}
+%	\caption{Visual quality vs. sampling rates.}
+%	\label{fig:sample_quality}
+%	\vspace{-3mm}
+%\end{figure}
+
+%\begin{figure}[t]
+%	\centering
+%	\includegraphics[width=0.5\textwidth]{pictures/quantitative_study_icde/zoom_quality.png}
+%	\vspace{-8mm}
+%	\caption{Visual quality vs. zoom level.}
+%	\label{fig:zoom_quality}
+%	\vspace{-3mm}
+%\end{figure}
 
 \stitle{Visual quality evaluation}
 We evaluate the quality of proposed methods from two aspects: (i) the quality vs different zoom levels; (ii) the quality vs different sampling rates.
@@ -37,32 +80,32 @@ We set the sampling rate $\alpha=1\%$. The results show that $\rand$ always has 
 
 \stitle{Running time evaluation}
 
-\begin{figure}[t]
-	\centering
-	\includegraphics[width=0.5\textwidth]{pictures/quantitative_study_icde/sample_time.png}
-	\vspace{-8mm}
-	\caption{Time usage vs. sampling rates.}
-	\label{fig:sample_time}
-	\vspace{-3mm}
-\end{figure}
+%\begin{figure}[t]
+%	\centering
+%	\includegraphics[width=0.5\textwidth]{pictures/quantitative_study_icde/sample_time.png}
+%	\vspace{-8mm}
+%	\caption{Time usage vs. sampling rates.}
+%	\label{fig:sample_time}
+%	\vspace{-3mm}
+%\end{figure}
 
-\begin{figure}
-	\centering
-	\small
-	\begin{tabular}{cc}
-		\includegraphics[width=0.44\columnwidth]{pictures/tporto}
-		&
-		\includegraphics[width=0.44\columnwidth]{pictures/tshenzhen}
-		\\
-		(A) \pt{}
-		&
-		(B) \sz{}	
-	\end{tabular}
-	\vspace{-3mm}
-	\caption{Running time of $\vats$ w/ and w/o Lemma~\ref{lem:submodular}.}
-	\label{fig:cost}
-	\vspace{-6mm}
-\end{figure}
+%\begin{figure}
+%	\centering
+%	\small
+%	\begin{tabular}{cc}
+%		\includegraphics[width=0.44\columnwidth]{pictures/tporto}
+%		&
+%		\includegraphics[width=0.44\columnwidth]{pictures/tshenzhen}
+%		\\
+%		(A) \pt{}
+%		&
+%		(B) \sz{}	
+%	\end{tabular}
+%	\vspace{-3mm}
+%	\caption{Running time of $\vats$ w/ and w/o Lemma~\ref{lem:submodular}.}
+%	\label{fig:cost}
+%	\vspace{-6mm}
+%\end{figure}
 \QM{unfininshed}
 We first conduct an experiment to evaluate the rendering cost by datasize. We vary the number of trajectories from 1000 to 1 million, which are randomly selected from \pt{} dataset. The experimental results are summarized in Table~\ref{tab:gpu}. We observe that the rendering cost is linear with the input data trajectories.
 
