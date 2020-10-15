@@ -1,0 +1,346 @@
+#!/usr/bin/env python
+# coding: utf-8
+
+# In[1]:
+
+
+import pandas as pd
+
+
+# In[2]:
+
+
+id_method = {
+    1: "full", 
+    2: "random", 
+    3: "baseline", 
+    4: "full",
+    5: "random",
+    6: "solutionx"
+}
+id_map = {
+    1: 1, 
+    2: 2, 
+    3: 3, 
+    4: 1,
+    5: 2,
+    6: 6
+}
+
+for key in id_map:
+    id_map[key] = id_method[id_map[key]]
+    
+with open('question_id.txt', 'r') as input_file:
+    lines = input_file.readlines()
+    lines = [[id_map[int(i)] for i in line.strip().split(',')] for line in lines]
+    method_by_groups = {}
+    for i, line in enumerate(lines): 
+        method_by_groups[i+1] = line
+    method_by_groups[-1] = [-1]
+    
+QID2PaperId = {}
+PaperID2GroupId = {1:[],2:[],3:[]}
+for i in range(1, 18):
+    QID2PaperId.setdefault(i, []).append(1)
+    PaperID2GroupId[1].append(i)
+for i in range(18, 34):
+    QID2PaperId.setdefault(i, []).append(2)
+    PaperID2GroupId[2].append(i)
+for i in range(27, 43):
+    QID2PaperId.setdefault(i, []).append(3)
+    PaperID2GroupId[3].append(i)
+
+
+# ### Read data
+
+# In[3]:
+
+
+def process_input_data(paper_id):
+    
+    path = 'result/{}.csv'.format(paper_id)
+    df1 = pd.read_csv(path).T.reset_index().rename(columns = {'index': 'index_name'})
+
+    context_start_cid = 11
+    # context_end_cid = 214
+    context_end_cid = df1.shape[0]-2
+    print(context_start_cid, context_end_cid)
+    start_group_id = 0 if paper_id == 1 else 17 if paper_id == 2 else 26
+    
+    # Add column id 
+    df1['cid'] = df1.index
+    # Add point id
+    def get_point_id(cid):
+        if cid < context_start_cid or cid > context_end_cid:
+            return -1
+        else:
+            return int(float(cid - context_start_cid) / 12) + 1 + start_group_id
+    df1['group_id'] = df1['cid'].apply(lambda cid: get_point_id(cid))
+    # Add answer_id
+    def get_answer_id(cid):
+        if cid < context_start_cid or cid > context_end_cid:
+            return -1
+        else:
+            return int(float(cid - context_start_cid) % 4) 
+    df1['answer_id'] = df1['cid'].apply(lambda cid: get_answer_id(cid))
+
+    # Add answer_icon
+    def get_answer_icon(cid):
+        if cid < context_start_cid or cid > context_end_cid:
+            return -1
+        else:
+            return ["A", "B", "C", "D"][int(float(cid - context_start_cid) % 4)] 
+
+    df1['answer_icon'] = df1['cid'].apply(lambda cid: get_answer_icon(cid))
+    # add methods 
+    def get_methods(row):
+        return method_by_groups[row['group_id']][row['answer_id']]
+
+    df1['method'] = df1.apply(lambda row: get_methods(row), axis=1)
+    # Add question_type
+    def get_question_type(cid):
+        if cid < context_start_cid or cid > context_end_cid:
+            return -1
+        else:
+            return ["clutter", "quality", "accept"][int(int(float(cid - context_start_cid) % 12) / 4)] 
+
+    df1['question_type'] = df1['cid'].apply(lambda cid: get_question_type(cid))
+
+    first = ['cid', 'group_id', 'answer_id', 'answer_icon', 'method', 'question_type']
+    columns =  first+ [c for c in df1.columns if c not in first]
+    # reorder the columns
+    df1 = df1[columns]
+    base_columns = ['cid','group_id','answer_id','answer_icon','method','index_name', 'question_type']
+    ids = [c for c in df1.columns if c not in base_columns]
+    
+    sum_df1 = pd.DataFrame()
+    df_list = []
+    for uid in ids:
+        _df = df1[base_columns + [uid]]
+        _df['user_id'] = "{}_{}".format(paper_id, uid)
+        _df = _df.rename(columns = {uid: 'answer'})
+        df_list.append(_df)
+    df_total = pd.concat(df_list)
+    df = df_total[df_total['method']!=-1]
+    return df
+
+
+# # Merge all result
+
+# In[4]:
+
+
+frames = []
+for i in range(1, 3+1):
+    _df = process_input_data(i)
+    print(_df.shape)
+    frames.append(_df)
+df = pd.concat(frames)
+df['answer'] = df['answer'].astype(str)
+df['answer'] = df['answer'].apply(lambda a: a[0])
+
+
+# In[5]:
+
+
+main_column = ['method', 'question_type', 'answer']
+stat_df = df.groupby(main_column).count().reset_index()[main_column + ['cid']].rename(columns = {'cid': 'count'})
+
+
+# In[6]:
+
+
+stat_df['question_type'].unique()
+
+
+# In[7]:
+
+
+clutter_df = stat_df[stat_df['question_type']=='clutter'].sort_values(['answer'])
+quality_df = stat_df[stat_df['question_type']=='quality'].sort_values(['answer'])
+accetp_df = stat_df[stat_df['question_type']=='accept'].sort_values(['answer'])
+
+CQ_answers = list(clutter_df['answer'].unique())
+A_answers = list(accetp_df['answer'].unique())
+
+
+# In[8]:
+
+
+CQ_answers, A_answers
+
+
+# In[9]:
+
+
+labels = CQ_answers[:]
+labels
+
+
+# In[10]:
+
+
+df = quality_df
+
+
+# In[11]:
+
+
+quality_df
+
+
+# In[12]:
+
+
+label_method_count = {}
+methods_count = {}
+for method, df in quality_df.groupby(['method']):
+    methods_count[method] = {
+        'count': list(df['count']),
+        'answer':list(df['answer'])
+    }
+
+
+# In[13]:
+
+
+methods_count
+
+
+# In[19]:
+
+
+import matplotlib
+import matplotlib.pyplot as plt
+import numpy as np
+
+labels = CQ_answers
+
+baseline = methods_count['baseline']['count']
+full = methods_count['full']['count']
+random = methods_count['random']['count']
+solutionx = methods_count['solutionx']['count']
+
+
+x = np.arange(len(labels))  # the label locations
+width = 0.9  # the width of the bars
+num = 4
+
+fig = plt.figure(figsize=(10,5))
+ax = fig.add_subplot(121)
+
+rect_baseline = ax.bar(x - width/4 - width/4 + width / 8, baseline, width / 4, label='baseline', hatch = 'x', color='#a6cee3')
+rect_full = ax.bar(x - width/8, full, width / 4, label='full', hatch = 'o', color='#b2df8a')
+rect_random = ax.bar(x + width / 8 , random, width / 4, label='random', hatch = '\\', color='#fb9a99')
+rect_solutionx = ax.bar(x + width/4 + width / 8, solutionx, width / 4, label='solutionx', hatch = '.', color='#ff7f00')
+
+# Add some text for labels, title and custom x-axis tick labels, etc.
+ax.set_ylabel('No. of Answers')
+ax.set_xlabel('Ranking(high quality -> low quality)')
+ax.set_title('Visual Quality')
+ax.set_xticks(x)
+ax.set_xticklabels(labels)
+ax.legend(loc='best')
+
+
+def autolabel(rects):
+    """Attach a text label above each bar in *rects*, displaying its height."""
+    for rect in rects:
+        height = rect.get_height()
+        ax.annotate('{}'.format(height),
+                    xy=(rect.get_x() + rect.get_width() / 4, height),
+                    xytext=(0, 3),  # 3 points vertical offset
+                    textcoords="offset points",
+                    ha='center', va='bottom')
+
+
+autolabel(rect_baseline)
+autolabel(rect_full)
+autolabel(rect_random)
+autolabel(rect_solutionx)
+
+fig.tight_layout()
+
+plt.show()
+
+
+# In[20]:
+
+
+label_method_count = {}
+methods_count = {}
+for method, df in clutter_df.groupby(['method']):
+    methods_count[method] = {
+        'count': list(df['count']),
+        'answer':list(df['answer'])
+    }
+
+
+# In[21]:
+
+
+import matplotlib
+import matplotlib.pyplot as plt
+import numpy as np
+
+labels = CQ_answers
+
+baseline = methods_count['baseline']['count']
+full = methods_count['full']['count']
+random = methods_count['random']['count']
+solutionx = methods_count['solutionx']['count']
+
+
+x = np.arange(len(labels))  # the label locations
+width = 0.9  # the width of the bars
+num = 4
+
+fig = plt.figure(figsize=(10,5))
+ax = fig.add_subplot(121)
+
+rect_baseline = ax.bar(x - width/4 - width/4 + width / 8, baseline, width / 4, label='baseline', hatch = 'x', color='#a6cee3')
+rect_full = ax.bar(x - width/8, full, width / 4, label='full', hatch = 'o', color='#b2df8a')
+rect_random = ax.bar(x + width / 8 , random, width / 4, label='random', hatch = '\\', color='#fb9a99')
+rect_solutionx = ax.bar(x + width/4 + width / 8, solutionx, width / 4, label='solutionx', hatch = '.', color='#ff7f00')
+
+# Add some text for labels, title and custom x-axis tick labels, etc.
+ax.set_ylabel('No. of Answers')
+ax.set_xlabel('Ranking(high quality -> low quality)')
+ax.set_title('Visual Quality')
+ax.set_xticks(x)
+ax.set_xticklabels(labels)
+ax.legend(loc='best')
+
+
+def autolabel(rects):
+    """Attach a text label above each bar in *rects*, displaying its height."""
+    for rect in rects:
+        height = rect.get_height()
+        ax.annotate('{}'.format(height),
+                    xy=(rect.get_x() + rect.get_width() / 4, height),
+                    xytext=(0, 3),  # 3 points vertical offset
+                    textcoords="offset points",
+                    ha='center', va='bottom')
+
+
+autolabel(rect_baseline)
+autolabel(rect_full)
+autolabel(rect_random)
+autolabel(rect_solutionx)
+
+fig.tight_layout()
+
+plt.show()
+
+
+# In[ ]:
+
+
+
+
+
+# In[ ]:
+
+
+
+
