@@ -216,10 +216,21 @@ G.~Andrienko and N.~Andrienko, ``Spatio-temporal aggregation for visual
 N.~Adrienko and G.~Adrienko, ``Spatial generalization and aggregation of
   massive movement data,'' \emph{TVCG}, vol.~17, no.~2, pp. 205--219, 2010.
 
+\bibitem{rapp2019void}
+T.~Rapp, C.~Peters, and C.~Dachsbacher, ``Void-and-cluster sampling of large
+  scattered data and trajectories,'' \emph{IEEE Transactions on Visualization
+  and Computer Graphics}, vol.~26, no.~1, pp. 780--789, 2019.
+
 \bibitem{chen2014visual}
 H.~Chen, W.~Chen, H.~Mei, Z.~Liu, K.~Zhou, W.~Chen, W.~Gu, and K.-L. Ma,
   ``Visual abstraction and exploration of multi-class scatterplots,''
   \emph{TVCG}, vol.~20, no.~12, pp. 1683--1692, 2014.
+
+\bibitem{yu2020turbocharging}
+J.~Yu and M.~Sarwat, ``Turbocharging geospatial visualization dashboards via a
+  materialized sampling cube approach,'' in \emph{2020 IEEE 36th International
+  Conference on Data Engineering (ICDE)}.\hskip 1em plus 0.5em minus
+  0.4em\relax IEEE, 2020, pp. 1165--1176.
 
 \bibitem{piringer2009multi}
 H.~Piringer, C.~Tominski, P.~Muigg, and W.~Berger, ``A multi-threading

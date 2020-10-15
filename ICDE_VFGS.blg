@@ -10,6 +10,11 @@ Reallocating 'singl_function' (item size: 4) to 100 items.
 Reallocating 'wiz_functions' (item size: 4) to 6000 items.
 Reallocating 'singl_function' (item size: 4) to 100 items.
 Database file #1: ref.bib
+Repeated entry---line 661 of file ref.bib
+ : @article{chen2014visual
+ :                        ,
+I'm skipping whatever remains of this entry
+Warning--I didn't find a database entry for ""
 Warning--I didn't find a database entry for "setcover"
 -- IEEEtran.bst version 1.14 (2015/08/26) by Michael Shell.
 -- http://www.michaelshell.org/tex/ieeetran/bibtex/
@@ -17,45 +22,45 @@ Warning--I didn't find a database entry for "setcover"
 Warning--missing school in borcan2012improving
 
 Done.
-You've used 48 entries,
+You've used 50 entries,
             4087 wiz_defined-function locations,
-            1071 strings with 15473 characters,
-and the built_in function-call counts, 38900 in all, are:
-= -- 3132
-> -- 977
-< -- 366
-+ -- 547
-- -- 164
-* -- 1865
-:= -- 5597
-add.period$ -- 106
-call.type$ -- 48
-change.case$ -- 48
-chr.to.int$ -- 831
-cite$ -- 49
-duplicate$ -- 2747
-empty$ -- 3029
-format.name$ -- 198
-if$ -- 9125
+            1081 strings with 15833 characters,
+and the built_in function-call counts, 40812 in all, are:
+= -- 3290
+> -- 1017
+< -- 388
++ -- 571
+- -- 169
+* -- 1956
+:= -- 5862
+add.period$ -- 111
+call.type$ -- 50
+change.case$ -- 50
+chr.to.int$ -- 885
+cite$ -- 51
+duplicate$ -- 2876
+empty$ -- 3179
+format.name$ -- 205
+if$ -- 9580
 int.to.chr$ -- 0
-int.to.str$ -- 48
-missing$ -- 493
-newline$ -- 167
-num.names$ -- 38
-pop$ -- 1120
+int.to.str$ -- 50
+missing$ -- 512
+newline$ -- 173
+num.names$ -- 40
+pop$ -- 1161
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 3017
+skip$ -- 3166
 stack$ -- 0
-substring$ -- 1990
-swap$ -- 2341
-text.length$ -- 89
+substring$ -- 2118
+swap$ -- 2457
+text.length$ -- 93
 text.prefix$ -- 0
 top$ -- 5
-type$ -- 48
+type$ -- 50
 warning$ -- 1
-while$ -- 175
-width$ -- 50
-write$ -- 486
-(There were 2 warnings)
+while$ -- 185
+width$ -- 52
+write$ -- 506
+(There was 1 error message)

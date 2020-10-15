@@ -1,18 +1,31 @@
 \section{Experimental Evaluation}\label{sec:exp}
-We evaluate our techniques on two real-world trajectory datasets: \pt{}, \sz{} and \cd{}.
+
+In this part, we first present several case studies of the results provided by $\avats$ in Section~\ref{sec:case} to demonstrate its good visualization quality. In Section~\ref{sec:user}, we conduct a comprehensive user study to test the effectiveness of $\avats$ on practical tasks including \textit{region center identification}, \textit{reachable route inspection} and \textit{traffic flow comparison}. In Section~\ref{sec:quality}, we quantitatively evaluate the visual quality and efficiency of $\avats$ and compare with well-designed baselines.     
+
+\begin{table}
+	\centering
+	\small
+	\caption{Statistics of the datasets used in the experiments}
+	\begin{tabular}{|c|c|c|c|c|} \hline
+		\textbf{Dataset} & \textbf{Trajectories} & \textbf{GPS Points} & \textbf{Maximum Length}\\ \hline
+		\pt{}& 2,390,000 & 75,670,000 & 3,490 \\ \hline
+		\sz{}& 3,070,000 & 53,530,000 & 2,268 \\ \hline
+		\cd{}& 280,000 & 6,690,000 & 4,025 \\ \hline
+	\end{tabular}	\label{tab:dataset}
+\end{table}
+
+
+\vspace{1mm}
+\noindent\textbf{Experiment Settings.} We conduct the experiments 
+using three real-world trajectory datasets: \pt{}, \sz{} and \cd{}.
 \pt{}~\cite{pt} contains a total of 2.39 million taxi trajectories and 75.67 million of GPS points, and the longest trajectory has 3,490 GPS points.
 \sz{}~\cite{sz} consists of 3.07 million taxi trajectories with 53.53 million GPS points, and the longest trajectory has 2,268 GPS points. 
-\cd{}~\cite{cd} consists of \QM{0.28} million taxi trajectories with \QM{6.69} million GPS points, and the longest trajectory has \QM{4025} GPS points.  All experiments are conducted on a machine with an Intel i7-8700 CPU, 24 GB memory and an NVIDIA GeForce GTX1080 GPU with 8 GB on-chip memory, running on Windows 10. All methods are implemented in Java 1.8, and the Processing 3 library~\cite{p3} is used for rendering. All datasets and source codes required to reproduce our results are available at~\cite{code}.
+\cd{}~\cite{cd} has \QM{0.28} million taxi trajectories and \QM{6.69} million GPS points, and the longest trajectory consists of \QM{4,025} GPS points. The statistics of the datasets are summarized in Table~\ref{tab:dataset}. All experiments are conducted on a machine with an Intel i7-8700 CPU, 24 GB memory and an NVIDIA GeForce GTX1080 GPU with 8 GB on-chip memory, running on Windows 10. All methods are implemented using Java 1.8, and the Processing 3 library~\cite{p3} is used for rendering. All timing results are measured in sing-thread mode. All datasets and source codes required to reproduce our results are available at~\cite{code}.
 
-%\REPORT{
-This section is organized as follows.
-In Section~\ref{sec:case}, we present several case studies of the visualization results on the \pt{} datasets to demonstrate the merits of our methods.
-% In Section~\ref{sec:case}, we evaluate the effectiveness of our proposal by the case studies on \pt{} and \sz{} trajectory dataset, respectively.
-%}
-In Section~\ref{sec:user}, we conduct a comprehensive user study to test the effectiveness of our visualization results on practical tasks including \textit{region center identification}, \textit{reachable route inspection} and \textit{traffic flow comparison}. In Section~\ref{sec:quality}, we quantitatively evaluate the visual quality and efficiency of our methods on all these three datasets.
+\vspace{1mm}
 
-% and has been cleaned for further analysis.
-\trim \trim
+\noindent\textbf{Baselines.} We compare $\avats$ with three main baselines, i.e., $\mathsf{Full}$, $\mathsf{Random}$ and $\mathsf{DTW}$. $\mathsf{Full}$ visualizes all trajectories in the user selected region while $\mathsf{Random}$ selects trajectories in the user selected region at random for visualization. $\mathsf{DTW}$ is based on the DTW distance between trajectories~\cite{borcan2012improving} and designed by us to select trajectories with good diversity. Specifically, $\mathsf{DTW}$ samples the trajectory that maximizes the aggregate DTW distance to all remaining trajectories in each step. $\mathsf{DTW}$ takes days to run on our datasets because it needs to compute the DTW distance between all trajectory pairs and DTW distance computation has a quadratic complexity w.r.t. trajectory length.  In all comparisons, we ensure that $\mathsf{Random}$ and $\mathsf{DTW}$ use the same number of trajectories as $\avats$.                    
+
 
 
 

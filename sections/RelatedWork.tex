@@ -23,11 +23,6 @@ A trajectory is a sequence of spatial locations (e.g., GPS positioning results) 
 %e.g., the optimizations in the middle-layer (see Figure~\ref{fig:framework}).
 %We briefly elaborate these optimization techniques {in this section}.
 
-
-
-
-
-
 Figure~\ref{fig:framework} illustrates the general architecture of interactive visualization systems,
 e.g., Spotfire~\cite{Spotfire}, Tableau~\cite{Tableau}, ATLAS~\cite{chan2008maintaining}, and Viate~\cite{yang2019vaite}.
 There are typically three layers: user interface in the front-end layer, optimization techniques in the middle-layer, and database management system (usually cloud-based) in the back-end layer. Researchers in the visualization community usually focus on improving the effectiveness of data visualization at the front-end, e.g., designing novel visualization methods/toolkits such as D3~\cite{d3} to enable data analysts to gain insights from data effectively. For researchers in the database community, they usually aim to improve query efficiency, e.g., devising big data processing systems such as Spark~\cite{spark} for efficient data processing at the back-end. With recent developments of location-acquisition technologies, the sizes of available trajectory datasets have become extremely large. For example, the operating taxis in Shenzhen generate {$\sim$}9.3GB trajectory data per day. However, large datasets increase visualization generation latency due to heavy data processing/graphic rendering, which harms the responsiveness of interactive visualization. Therefore, both visualization and database communities began to advance techniques in the middle-layer to reduce the visualization latency for large datasets. We briefly elaborate these techniques as follows.
@@ -49,19 +44,17 @@ These works~\cite{wood2010visualisation,guo2009flow,von2015mobilitygraphs} divid
 %However, aggregating-based methods will cause information loss definitely.
 %For instance, the continuous spatial traces of the moving objects are always missing and the rarely appeared trajectories are easily to be ignored.
 
-
-
-
-
-
 \stitle{Sampling-based techniques}
-Sampling techniques are widely used in both visualization and database communities ~\cite{battle2013dynamic,chen2014visual,park2016visualization,qin2020making,DBLP:conf/sigmod/DingHCC016,DBLP:journals/pvldb/KimBPIMR15}.
+Sampling techniques are widely used in both visualization and database communities ~\cite{battle2013dynamic,rapp2019void, chen2014visual,yu2020turbocharging,park2016visualization,qin2020making,DBLP:conf/sigmod/DingHCC016,DBLP:journals/pvldb/KimBPIMR15}.
 %are well-studied in the interactive visualization problems with large-scale input data.
 %It is
 %In particular, ~\cite{chen2014visual} devised a sampling algorithm to preserve the meaningful data items.
 % according to the analyzing requirement such as the multi-class data analysis and hierarchical exploration.
+These works try to reduce the dataset to a subset with some special characters: such as the blue noise property~\ref{rapp2019void}, the multi-class property~\cite{chen2014visual} or maximize other optional user-defined quality~\cite{chen2014visual}. 
 The work most relevant to ours is~\cite{park2016visualization}, which is designed for scatter plots (a form of point-based visualization). It solves the problem of point overdrawing and preserves the spatial point distribution of the original dataset at the same time. The techniques in~\cite{park2016visualization} cannot be adapted to our trajectory visualization problem
-as trajectory is more complex than scatter points (e.g., varying lengths, contiguous GPS points).
+as trajectory is more complex than scatter points (e.g., varying lengths, contiguous GPS points).  Moreover, \cite{borcan2012improving} discusses the incremental reduction method to sample trajectory dataset: in each iteration, a trajectory with the smallest average dynamic time warping(DTW) distance to every other trajectory is removed. However, the this method has a high time complexity and it is hard to evaluate the ``distance'' from the perspective of visual similarity. 
+
+It's worth to mention the area of trajectory simplification~\cite{} which is a kind of sampling inside each trajectory. 
 %(i) the complexity of the trajectories~\cite{pelekis2010unsupervised}, and (ii) the loss function and its corresponding solutions are specified for scatter plot, not applicable for line-based trajectory visualization.
 %For trajectory visual analysis,  most of the existing trajectory sampling techniques (if not all) cluster the trajectories at first,
 %then select the most representative trajectories from each cluster and visualize them.
